@@ -27,7 +27,7 @@
 <!--        VALUE(#{id}, #{count})-->
 <!--        ON DUPLICATE KEY UPDATE count=#{count}-->
 <!--    </update>-->
-    <select id="getAppFlag" parameterType="java.lang.Integer">
+    <select id="getAppFlag" resultType="java.lang.Integer" parameterType="java.lang.Integer">
         SELECT flag FROM App where id = #{id}
     </select>
 
