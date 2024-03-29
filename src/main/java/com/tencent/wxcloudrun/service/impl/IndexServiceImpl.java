@@ -7,9 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class IndexServiceImpl implements IndexService {
-    @Autowired
-    private IndexMapper indexMapper;
 
+    final IndexMapper indexMapper;
+
+    public IndexServiceImpl(@Autowired IndexMapper indexMapper) {
+        this.indexMapper = indexMapper;
+    }
 
 
     @Override

@@ -13,8 +13,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 
 public class IndexController {
-  @Autowired
-  private IndexService indexService;
+  final IndexService indexService;
+
+  public IndexController(@Autowired IndexService indexService) {
+    this.indexService = indexService;
+  }
+
   /**
    * 主页页面
    * @return API response html
