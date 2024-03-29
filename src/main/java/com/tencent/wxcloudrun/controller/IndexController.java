@@ -3,6 +3,7 @@ package com.tencent.wxcloudrun.controller;
 import com.tencent.wxcloudrun.config.ApiResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * index控制器
@@ -19,7 +20,8 @@ public class IndexController {
   public String index() {
     return "index";
   }
-  @GetMapping("/get_reset")
+  @GetMapping(value = "/get_reset")
+  @ResponseBody
   ApiResponse Reset(){
     return ApiResponse.ok(1);
   }
