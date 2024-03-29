@@ -3,8 +3,6 @@ package com.tencent.wxcloudrun.controller;
 import com.tencent.wxcloudrun.config.ApiResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * index控制器
