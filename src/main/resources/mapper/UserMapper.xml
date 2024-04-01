@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tencent.wxcloudrun.dao.UserMapper">
+    <resultMap id="userMapper" type="com.tencent.wxcloudrun.model.User">
+        <id property="id" column="id"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="gender" column="gender"/>
+        <result property="avatarUrl" column="avatar_url"/>
+        <result property="createTime" column="create_time" javaType="java.time.LocalDateTime"  />
+    </resultMap>
+    <select id="getByOpenid" resultMap="userMapper" parameterType="java.lang.Integer">
+        select * from User where openid = #{openid}
+    </select>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into User (openid, nick_name, phone, gender, id_number, avatar_url, create_time)
+        values (#{openid}, #{nickName}, #{phone}, #{gender}, #{idNumber}, #{avatarUrl}, #{createTime})
+    </insert>
+
+</mapper>
